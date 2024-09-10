@@ -14,4 +14,5 @@ const firebase_app = getApps().length === 0 ? initializeApp(firebaseConfig) : ge
 
 export default firebase_app;
 export const auth = getAuth(firebase_app);
+auth.useDeviceLanguage();
 export const googleProvider = new GoogleAuthProvider();
