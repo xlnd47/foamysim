@@ -3,6 +3,7 @@
 import { useAuth } from './context/AuthContext';
 import SignIn from './components/SignIn';
 import SignOut from './components/SignOut';
+import Link from 'next/link';
 
 export default function Home() {
   const { user } = useAuth();
@@ -14,6 +15,9 @@ export default function Home() {
         {user ? (
           <div>
             <p className="mb-4">Welcome, {user.email}!</p>
+            <Link href="/packages" className="text-blue-500 hover:underline mb-4 block">
+              View Packages
+            </Link>
             <SignOut />
           </div>
         ) : (
